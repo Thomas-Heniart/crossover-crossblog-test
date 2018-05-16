@@ -9,6 +9,6 @@ import java.util.List;
 @RepositoryRestResource(exported = false)
 public interface ArticleRepository extends PagingAndSortingRepository<Article, Long> {
 
-    List<Article> findTop10ByTitleContainingIgnoreCase(String title);
+    List<Article> findTop10ByTitleIdContainingIgnoreCase(String title);
 
 }

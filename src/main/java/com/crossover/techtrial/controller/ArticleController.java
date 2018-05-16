@@ -45,9 +45,9 @@ public class ArticleController {
      */
     @GetMapping(path = "articles/search")
     public ResponseEntity<List<Article>> searchArticles(@RequestParam(value = "text") String text) {
-        long startTime = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
         ResponseEntity<List<Article>> responseEntity = new ResponseEntity<>(articleService.search(text), HttpStatus.OK);
-        System.out.println("Method time: " + (System.currentTimeMillis() - startTime));
+        System.out.println("Method time: " + (System.currentTimeMillis() - start));
         return responseEntity;
     }
 
