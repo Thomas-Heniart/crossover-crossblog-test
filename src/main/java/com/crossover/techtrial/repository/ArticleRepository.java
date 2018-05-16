@@ -11,6 +11,4 @@ public interface ArticleRepository extends PagingAndSortingRepository<Article, L
 
     List<Article> findTop10ByTitleContainingIgnoreCase(String title);
 
-    List<Article> findAllByTitleContainingIgnoreCase(String title);
-
 }

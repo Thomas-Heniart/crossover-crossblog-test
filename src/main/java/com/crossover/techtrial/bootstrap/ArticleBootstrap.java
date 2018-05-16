@@ -30,7 +30,7 @@ public class ArticleBootstrap implements ApplicationListener<ContextRefreshedEve
 
     private void loadArticles() {
         this.articleRepository.deleteAll();
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < 25000; i++) {
             Article article = new Article();
             article.setEmail("heniart.thomas@gmail.com");
             article.setTitle(titles[ThreadLocalRandom.current().nextInt(titles.length)]);
