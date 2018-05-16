@@ -41,7 +41,7 @@ public class ArticleBootstrap implements ApplicationListener<ContextRefreshedEve
         Title title2 = new Title();
         title2.setId("Test2");
         titleRepository.save(title2);
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 25000; i++) {
             Article article = new Article();
             article.setEmail("heniart.thomas@gmail.com");
             switch (ThreadLocalRandom.current().nextInt(3)) {
