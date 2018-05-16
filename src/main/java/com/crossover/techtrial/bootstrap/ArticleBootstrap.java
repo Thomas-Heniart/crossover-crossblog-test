@@ -3,6 +3,7 @@ package com.crossover.techtrial.bootstrap;
 import com.crossover.techtrial.model.Article;
 import com.crossover.techtrial.model.Title;
 import com.crossover.techtrial.repository.ArticleRepository;
+import com.crossover.techtrial.repository.TitleRepository;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
