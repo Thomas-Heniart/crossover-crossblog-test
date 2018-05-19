@@ -1,10 +1,12 @@
 package com.crossover.techtrial.service;
 
 import com.crossover.techtrial.model.Article;
+import com.crossover.techtrial.model.Title;
 import com.crossover.techtrial.repository.ArticleRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import java.util.LinkedList;
@@ -72,13 +74,15 @@ public class ArticleServiceImplTest {
     @Test
     public void testSearch() {
         Article article = new Article();
-        article.setTitle(ARTICLE_TITLE);
+        Title title = Mockito.mock(Title.class);
+        when(title.getId()).thenReturn(ARTICLE_TITLE);
+        article.setTitle(title);
         List<Article> articleList = new LinkedList<>();
         articleList.add(article);
 
-        when(articleRepository.findTop10ByTitleContainingIgnoreCase(ARTICLE_TITLE)).thenReturn(articleList);
+        when(articleRepository.findTop10ByTitleIdContainingIgnoreCase(ARTICLE_TITLE)).thenReturn(articleList);
         List<Article> articlesFound = articleService.search(ARTICLE_TITLE);
         assertTrue(articlesFound.contains(article));
-        verify(articleRepository, times(1)).findTop10ByTitleContainingIgnoreCase(ARTICLE_TITLE);
+        verify(articleRepository, times(1)).findTop10ByTitleIdContainingIgnoreCase(ARTICLE_TITLE);
     }
 }
