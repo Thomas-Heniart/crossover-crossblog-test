@@ -37,6 +37,3 @@ q
 Asrc/main/java/com/crossover/techtrial/service/ArticleService.java,f/e/fe417e431db7aa57f6b8d0a780b1b5239609c100
 Y
 )src/main/resources/application.properties,0/6/06f65155ec73600b9fc5c4dc2883d4bb84d8e284
-:
-
-Readme.txt,c/b/cb04fce841463146fb48e8699901001422401f6e

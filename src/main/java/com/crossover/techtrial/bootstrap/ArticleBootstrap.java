@@ -5,6 +5,7 @@ import com.crossover.techtrial.model.Title;
 import com.crossover.techtrial.repository.ArticleRepository;
 import com.crossover.techtrial.repository.TitleRepository;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Component
+@Profile({"default", "dev"})
 public class ArticleBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     private ArticleRepository articleRepository;
@@ -41,7 +43,7 @@ public class ArticleBootstrap implements ApplicationListener<ContextRefreshedEve
         Title title2 = new Title();
         title2.setId("Test2");
         titleRepository.save(title2);
-        for (int i = 0; i < 25000; i++) {
+        for (int i = 0; i < 10; i++) {
             Article article = new Article();
             article.setEmail("heniart.thomas@gmail.com");
             switch (ThreadLocalRandom.current().nextInt(3)) {
